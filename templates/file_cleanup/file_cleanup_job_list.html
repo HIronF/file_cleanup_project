@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Cleanup Job List</title>
+</head>
+<body>
+    <h1>File Cleanup Job List</h1>
+    <ul>
+        {% for job in file_cleanup_jobs %}
+            <li>{{ job.directory }} - {{ job.schedule }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_file_cleanup_job' %}">Create New File Cleanup Job</a>
+</body>
+</html>
